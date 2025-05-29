@@ -3,6 +3,7 @@ version: "20250522050804"
 slug: "bind"
 description: "A fully featured DNS server. Please note: This addon is not provided by Internet Systems Consortium, it is a third party addon"
 url: "https://github.com/cmsj/addon-bind"
+host_network: true
 arch:
   - armhf
   - armv7
