@@ -23,10 +23,10 @@ jobs:
           git remote add upstream https://github.com/cmsj/addon-bind
           git fetch upstream
 
-      - name: Rebase onto upstream/main
+      - name: Merge upstream/main into your main
         run: |
           git checkout main
-          git rebase upstream/main
+          git merge upstream/main
 
       - name: Push changes
         run: |
