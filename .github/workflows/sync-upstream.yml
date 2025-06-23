@@ -20,7 +20,7 @@ jobs:
 
       - name: Add upstream remote and fetch
         run: |
-          git remote add upstream https://github.com/svrnm/addon-bind.git
+          git remote add upstream https://github.com/cmsj/addon-bind
           git fetch upstream
 
       - name: Rebase onto upstream/main
