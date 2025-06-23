@@ -1,9 +1,7 @@
-name: Sync with upstream
+name: Sync with upstream (initial merge)
 
 on:
-  schedule:
-    - cron: '0 * * * *'  # Spouští se každou hodinu
-  workflow_dispatch:      # Možnost manuálního spuštění
+  workflow_dispatch:    # spustíš ručně přes GitHub UI
 
 jobs:
   sync:
@@ -23,11 +21,11 @@ jobs:
           git remote add upstream https://github.com/cmsj/addon-bind
           git fetch upstream
 
-      - name: Merge upstream/main into your main
+      - name: Merge upstream/main into fork/main
         run: |
           git checkout main
-          git merge upstream/main --allow-unrelated-histories
+          git merge upstream/main --allow-unrelated-histories --no-edit
 
-      - name: Push changes
+      - name: Push merged changes
         run: |
-          git push origin main --force-with-lease
+          git push origin main
